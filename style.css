@@ -108,6 +108,15 @@ nav a:hover {
   margin-top: 1em;
 }
 
+.app-store-badge-bottom-left {
+  position: absolute;
+  bottom: 20px;
+  left: 2em;
+  width: 150px;
+  height: auto;
+  z-index: 2;
+}
+
 #features {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -134,6 +143,12 @@ nav a:hover {
 .feature h3 {
   color: #663399;
   margin-top: 0;
+}
+
+.in-app-purchase-note {
+  font-size: 0.7em;
+  display: block;
+  margin-top: 0.5em;
 }
 
 footer {
