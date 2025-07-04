@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+:root {
+  --primary-color: #663399;
+  --secondary-color: #F5A623;
+  --background-color: #FFFFFF;
+  --text-color: #333333;
+  --light-gray: #f9f9f9;
+  --dark-gray: #333;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
-  background-color: #FFFFFF;
-  color: #333333;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 header {
-  background-color: #663399;
+  background-color: var(--primary-color);
   color: white;
   padding: 1em;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -34,7 +43,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #F5A623;
+  color: var(--secondary-color);
 }
 
 #hero {
@@ -99,13 +108,15 @@ nav a:hover {
 }
 
 .app-store-badge {
-  background-image: url('images/app-store-badge.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
   display: inline-block;
   height: 50px;
   width: 150px;
   margin-top: 1em;
+}
+
+.app-store-badge img {
+  height: 100%;
+  width: 100%;
 }
 
 .app-store-badge-bottom-left {
@@ -129,7 +140,7 @@ nav a:hover {
 .feature {
   display: flex;
   align-items: flex-start;
-  background-color: #f9f9f9;
+  background-color: var(--light-gray);
   padding: 2em;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -141,7 +152,7 @@ nav a:hover {
 }
 
 .feature h3 {
-  color: #663399;
+  color: var(--primary-color);
   margin-top: 0;
 }
 
@@ -152,7 +163,7 @@ nav a:hover {
 }
 
 footer {
-  background-color: #333;
+  background-color: var(--dark-gray);
   color: white;
   padding: 2em;
   text-align: center;
@@ -167,7 +178,7 @@ footer {
 .faq-section h1 {
   text-align: center;
   margin-bottom: 2em;
-  color: #663399;
+  color: var(--primary-color);
 }
 
 .faq-grid {
@@ -177,14 +188,14 @@ footer {
 }
 
 .faq-item {
-  background-color: #f9f9f9;
+  background-color: var(--light-gray);
   padding: 2em;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .faq-item h2 {
-  color: #663399;
+  color: var(--primary-color);
   margin-top: 0;
 }
 
@@ -196,12 +207,12 @@ footer {
 }
 
 .privacy-section h1 {
-  color: #663399;
+  color: var(--primary-color);
   margin-bottom: 1em;
 }
 
 .privacy-content {
-  background-color: #f9f9f9;
+  background-color: var(--light-gray);
   padding: 2em;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -216,7 +227,7 @@ footer {
 .press-section h1 {
   text-align: center;
   margin-bottom: 1em;
-  color: #663399;
+  color: var(--primary-color);
 }
 
 .press-intro {
@@ -232,7 +243,7 @@ footer {
 }
 
 .press-item {
-  background-color: #f9f9f9;
+  background-color: var(--light-gray);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   overflow: hidden;
@@ -260,7 +271,7 @@ footer {
 .contact-section h1 {
   text-align: center;
   margin-bottom: 1em;
-  color: #663399;
+  color: var(--primary-color);
 }
 
 .contact-intro {
@@ -270,7 +281,7 @@ footer {
 }
 
 .contact-form {
-  background-color: #f9f9f9;
+  background-color: var(--light-gray);
   padding: 2em;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -292,12 +303,12 @@ footer {
   width: 100%;
   padding: 1em;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 4px;.
   box-sizing: border-box;
 }
 
 .submit-btn {
-  background-color: #663399;
+  background-color: var(--primary-color);
   color: white;
   padding: 1em 2em;
   border: none;
