@@ -111,7 +111,7 @@ nav a:hover {
 .app-store-badge-bottom-left {
   position: absolute;
   bottom: 20px;
-  left: 2em;
+  left: 20px;
   width: 150px;
   height: auto;
   z-index: 2;
@@ -309,4 +309,56 @@ footer {
 
 .submit-btn:hover {
   background-color: #502779;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 0.5em 0;
+  }
+
+  #hero {
+    padding: 4em 1em;
+  }
+
+  #hero h1 {
+    font-size: 2.5em;
+  }
+
+  .app-store-badge-bottom-left {
+    left: 1em;
+  }
+
+  .carousel-toggle-btn {
+    right: 1em;
+  }
+
+  #features {
+    grid-template-columns: 1fr;
+    padding: 2em 1em;
+  }
+
+  .feature {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature img {
+    margin: 0 auto 1em auto;
+  }
+
+  .faq-grid,
+  .press-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-section,
+  .contact-section {
+    padding: 2em 1em;
+  }
 }
