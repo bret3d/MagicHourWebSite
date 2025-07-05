@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let intervalId;
 
   function showSlide(n) {
+    if (slides.length === 0) return;
     slides.forEach(slide => slide.classList.remove('active'));
     slides[n].classList.add('active');
   }
@@ -17,24 +18,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function playCarousel() {
     intervalId = setInterval(nextSlide, 10000);
-    toggleBtn.style.backgroundImage = 'url(images/icon-pause.svg)';
+    if (toggleBtn) {
+      toggleBtn.style.backgroundImage = 'url(images/icon-pause.svg)';
+    }
     isPlaying = true;
   }
 
   function pauseCarousel() {
     clearInterval(intervalId);
-    toggleBtn.style.backgroundImage = 'url(images/icon-play.svg)';
+    if (toggleBtn) {
+      toggleBtn.style.backgroundImage = 'url(images/icon-play.svg)';
+    }
     isPlaying = false;
   }
 
-  toggleBtn.addEventListener('click', () => {
-    if (isPlaying) {
-      pauseCarousel();
-    } else {
-      playCarousel();
-    }
-  });
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        pauseCarousel();
+      } else {
+        playCarousel();
+      }
+    });
+  }
 
-  showSlide(currentSlide);
-  playCarousel();
+  if (slides.length > 0) {
+    showSlide(currentSlide);
+    playCarousel();
+  }
 });

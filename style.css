@@ -21,6 +21,8 @@ header {
   color: white;
   padding: 1em;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
 }
 
 nav ul {
@@ -44,6 +46,24 @@ nav a {
 
 nav a:hover {
   color: var(--secondary-color);
+}
+
+.hamburger-menu {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 #hero {
@@ -324,13 +344,37 @@ footer {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
+  nav {
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
   }
 
+  .hamburger-menu {
+    display: block;
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
   nav li {
-    margin: 0.5em 0;
+    margin: 1em 0;
   }
 
   #hero {
@@ -357,6 +401,7 @@ footer {
   .feature {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
   .feature img {
